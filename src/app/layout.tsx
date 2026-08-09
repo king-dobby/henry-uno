@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import TelemetryProvider from "@/components/TelemetryProvider";
 
 export const metadata: Metadata = {
   title: "Henry Portal",
@@ -13,7 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body>{children}</body>
+      <body>
+        <TelemetryProvider />
+        {children}
+      </body>
     </html>
   );
 }
